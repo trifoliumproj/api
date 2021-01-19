@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package nhentai;
+
+service API {
+  rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
+}
+
+message GalleryRequest {
+  int32 id = 1;
+}
+
+message GalleryResponse {
+  message Title {
+    string japanese = 1;
+    string english = 2;
+    string pretty = 3;
+  }
+
+  message Images {
+    message Image {
+      string t = 1;
+      int32 w = 2;
+      int32 h = 3;
+    }
+    
+    repeated Image pages = 1;
+    Image cover = 2;
+    Image thumbnail = 3;
+  }
+
+  message Tag {
+    int32 id = 1;
+    string type = 2;
+    string name = 3;
+    string url = 4;
+    int32 count = 5;
+  }
+
+  int32 id = 1;
+  int32 media_id = 2;
+  Title title = 3;
+  Images images = 4;
+  string scanlator = 5;
+  string upload_date = 6;
+  repeated Tag tags = 7;
+  int32 num_pages = 8;
+  int32 num_favorites = 9;
+}
