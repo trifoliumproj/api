@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package nhentai;
 
+option go_package = "github.com/trifoliumproj/api";
+
 service API {
   rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
 }
