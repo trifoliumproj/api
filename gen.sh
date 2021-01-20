@@ -14,7 +14,7 @@ docker run -v `pwd`:/defs namely/protoc-all \
 
 docker run -v `pwd`:/defs namely/protoc-all \
 	-f hentai-cafe.proto \
-	-l node \
+	-l python \
 	-o generated/hentai-cafe \
 
 docker run -v `pwd`:/defs namely/protoc-all \
