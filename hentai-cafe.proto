@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package hentai_cafe;
+
+option go_package = ".;hentai_cafe";
+
+service API {
+  rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
+}
+
+message GalleryRequest {
+  int32 id = 1;
+}
+
+message GalleryResponse {}
