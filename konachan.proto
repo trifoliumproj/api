@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package konachan;
+
+option go_package = ".;konachan";
+
+service API {
+  rpc Gallery(GalleryRequest) returns (GalleryResponse) {}
+}
+
+message GalleryRequest {
+  repeated Tag tags = 1;
+}
+
+message GalleryResponse {
+  repeated Post posts = 1;
+}
+
+message Tag {
+  string name = 1;
+}
+
+message Post {
+  int32 id = 1;
+  string tags = 2;
+  int32 created_at = 3;
+  int32 creator_id = 4;
+  string author = 5;
+  int32 change = 6;
+  string source = 7;
+  int32 score = 8;
+  string md5 = 9;
+  int32 file_size = 10;
+  string file_url = 11;
+  bool is_shown_in_index = 12;
+  string preview_url = 13;
+  int32 preview_width = 14;
+  int32 preview_height = 15;
+  int32 actual_preview_width = 16; 
+  int32 actual_preview_height = 17;
+  string sample_url = 18;
+  int32 sample_width = 19;
+  int32 sample_height = 20;
+  int32 sample_file_size = 21;
+  string jpeg_url = 22;
+  int32 jpeg_width = 23;
+  int32 jpeg_height = 24;
+  int32 jpeg_file_size = 25;
+  string rating = 26;
+  bool has_children = 27;
+  string parent_id = 28;
+  string status = 29;
+  int32 width = 30;
+  int32 height = 31;
+  bool is_held = 32;
+  // frames_pending_string = ""
+  // frames_pending = []
+  // frames_string = ""
+  // frames = []
+}
