@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package konachan;
 
+import "google/protobuf/wrappers.proto"
+
 option go_package = ".;konachan";
 
 service API {
@@ -36,7 +38,7 @@ message Post {
   string preview_url = 13;
   int32 preview_width = 14;
   int32 preview_height = 15;
-  int32 actual_preview_width = 16; 
+  int32 actual_preview_width = 16;
   int32 actual_preview_height = 17;
   string sample_url = 18;
   int32 sample_width = 19;
@@ -48,7 +50,7 @@ message Post {
   int32 jpeg_file_size = 25;
   string rating = 26;
   bool has_children = 27;
-  string parent_id = 28;
+  google.protobuf.StringValue parent_id = 28;
   string status = 29;
   int32 width = 30;
   int32 height = 31;
