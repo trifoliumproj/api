@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package konachan;
 
-import "google/protobuf/wrappers.proto"
+import "google/protobuf/wrappers.proto";
 
 option go_package = ".;konachan";
 
